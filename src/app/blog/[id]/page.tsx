@@ -55,9 +55,6 @@ export default function Page({ params }: { params: { id: string } }) {
               <BreadcrumbSeparator>
                 <Slash />
               </BreadcrumbSeparator>
-              <BreadcrumbSeparator>
-                <Slash />
-              </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbPage>{post.title || "Untitled"}</BreadcrumbPage>
               </BreadcrumbItem>
