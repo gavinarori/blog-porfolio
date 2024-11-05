@@ -18,18 +18,16 @@ import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { LoginForm } from "@/components/login-form"
-import { Icons } from "./icons";
+import { useSession } from 'next-auth/react';;
 import { ModeToggle } from "./ui/mode-toggle";
 import { POSTS } from "@/lib/constants";
 
+
 export function MainNav({ className }: { className?: string }) {
+  const { data: session } = useSession(); 
   return (
     <div
       className={cn(
@@ -39,28 +37,11 @@ export function MainNav({ className }: { className?: string }) {
     >
       <Link href={"/"}>
         <div className="flex items-center justify-between w-32">
-          <Icons.logo className="h-6 w-6" />
           <p>John Paul</p>
         </div>
       </Link>
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {POSTS.map((post) => (
-                  <ListItem
-                    key={post.title}
-                    title={post.title}
-                    href={post.href}
-                  >
-                    {post.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/all" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -74,7 +55,9 @@ export function MainNav({ className }: { className?: string }) {
         <ModeToggle />
         <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Admin</Button>
+      <Button variant="outline" >
+          {session ? `${session.user?.email}` : "Admin"}
+      </Button>
       </DialogTrigger>
       <DialogContent >  
       <LoginForm />  
