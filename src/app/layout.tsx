@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { siteConfig } from "@/config/site";
 import { Toaster } from "@/components/ui/toaster"
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,7 +68,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex-1">{children}</main>
+          <main className="flex-1"> <Providers>{children}</Providers></main>
           <Toaster />
           <Footer />
         </ThemeProvider>

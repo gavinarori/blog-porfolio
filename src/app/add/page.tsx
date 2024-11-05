@@ -7,10 +7,11 @@ const AddBlog = () => {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [description, setDescription] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handlePost = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        setLoading(true);
         try {
             const response = await fetch('http://localhost:3000/api/blog', {
                 method: 'POST',
@@ -43,10 +44,11 @@ const AddBlog = () => {
                 
             });
         }
+        setLoading(false);
     };
 
     return (
-        <div className="bg-white border rounded-lg px-8 py-6 mx-auto my-8 max-w-2xl">
+        <div className=" flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <h2 className="text-2xl font-medium mb-4">Create a Blog Post</h2>
             <form onSubmit={handlePost}>
                 <div className="mb-4">
@@ -78,8 +80,8 @@ const AddBlog = () => {
                     ></textarea>
                 </div>
                 <div>
-                    <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                        Submit
+                    <button type="submit" disabled={loading} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                    { loading ? "Submitting..." : "Submit"  }
                     </button>
                 </div>
             </form>
@@ -88,3 +90,7 @@ const AddBlog = () => {
 };
 
 export default AddBlog;
+function setLoading(arg0: boolean) {
+    throw new Error('Function not implemented.');
+}
+
