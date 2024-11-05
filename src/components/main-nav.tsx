@@ -14,6 +14,17 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { LoginForm } from "@/components/login-form"
 import { Icons } from "./icons";
 import { ModeToggle } from "./ui/mode-toggle";
 import { POSTS } from "@/lib/constants";
@@ -59,11 +70,16 @@ export function MainNav({ className }: { className?: string }) {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex items-center justify-between w-20">
+      <div className="flex items-center gap-4 justify-between w-20">
         <ModeToggle />
-        <Link href="/rss">
-          <Icons.rss className="h-6 w-6" />
-        </Link>
+        <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Admin</Button>
+      </DialogTrigger>
+      <DialogContent >  
+      <LoginForm />  
+      </DialogContent>
+    </Dialog>
       </div>
     </div>
   );
