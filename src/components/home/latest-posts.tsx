@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 import SkeletonCard from "@/components/skeleton/popular_posts_skeleton";
 
 async function fetchBlogs() {
-  const response = await fetch("http://localhost:3000/api/blog");
+  const response = await fetch("https://omari-john-paul.vercel.app/api/blog");
   
   if (!response.ok) {
     throw new Error("Failed to fetch blogs");
