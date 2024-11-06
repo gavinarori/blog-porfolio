@@ -1,12 +1,5 @@
 "use client";
 
-import { POSTS } from "@/lib/constants";
-import { Icons } from "./icons";
-import Link from "next/link";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-
-import { useFormState } from "react-dom";
 
 export default function Footer() {
 
@@ -15,168 +8,38 @@ export default function Footer() {
 <footer className="bg-background w-full">
   <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
     <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
-      <div className="mx-auto max-w-sm lg:max-w-none">
-        <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet
-          aut perferendis distinctio iusto repudiandae, provident velit earum?
-        </p>
-
-        <div className="mt-6 flex justify-center gap-4 lg:justify-start">
-          <a
-            className="text-gray-700 transition hover:text-gray-700/75"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only"> Facebook </span>
-
-            <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-
-          <a
-            className="text-gray-700 transition hover:text-gray-700/75"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only"> Instagram </span>
-
-            <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-
-          <a
-            className="text-gray-700 transition hover:text-gray-700/75"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only"> Twitter </span>
-
-            <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
-              />
-            </svg>
-          </a>
-
-          <a
-            className="text-gray-700 transition hover:text-gray-700/75"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only"> GitHub </span>
-
-            <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-
-          <a
-            className="text-gray-700 transition hover:text-gray-700/75"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only"> Dribbble </span>
-
-            <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
-        <div>
-          <strong className="font-medium text-gray-900"> Services </strong>
-
-          <ul className="mt-6 space-y-1">
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Marketing </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#">
-                Graphic Design
-              </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#">
-                App Development
-              </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#">
-                Web Development
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <strong className="font-medium text-gray-900"> About </strong>
-
-          <ul className="mt-6 space-y-1">
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> About </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Careers </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> History </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Our Team </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <strong className="font-medium text-gray-900"> Support </strong>
-
-          <ul className="mt-6 space-y-1">
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> FAQs </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Contact </a>
-            </li>
-
-            <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Live Chat </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+     
     </div>
+    
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-2 pb-12 border-b-2 border-gray-200">
+          <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M10.0002 1.83398C7.79102 1.83398 6.00016 3.62485 6.00016 5.83398C6.00016 7.81598 7.44169 9.46129 9.3335 9.77868V11.8438C8.15165 11.8773 6.58573 12.0034 5.21484 12.3198C4.3956 12.5089 3.59344 12.7773 2.98057 13.1696C2.3658 13.5632 1.8335 14.1587 1.8335 15.0007C1.8335 15.4261 2.03957 15.8389 2.35737 16.1901C2.68091 16.5477 3.15401 16.8824 3.78679 17.1701C5.05045 17.7444 7.02988 18.1673 10.0002 18.1673C11.2802 18.1673 13.2118 18.0404 14.8432 17.6489C15.6539 17.4543 16.4414 17.1828 17.0417 16.795C17.6411 16.4076 18.1668 15.8234 18.1668 15.0007C18.1668 14.3531 17.7301 13.63 16.8682 13.0593C15.9939 12.4806 14.6234 12.0086 12.5555 11.8363C12.1886 11.8057 11.8664 12.0784 11.8358 12.4453C11.8052 12.8122 12.0779 13.1344 12.4448 13.165C14.3769 13.326 15.5064 13.7569 16.1321 14.1711C16.7702 14.5936 16.8335 14.9538 16.8335 15.0007C16.8335 15.1779 16.7342 15.4062 16.318 15.6751C15.9026 15.9435 15.2839 16.172 14.5321 16.3524C13.0385 16.7109 11.2202 16.834 10.0002 16.834C7.13711 16.834 5.36654 16.4235 4.33853 15.9562C3.82549 15.723 3.51733 15.4848 3.34608 15.2956C3.18432 15.1168 3.16835 15.0108 3.16683 15.0007C3.16683 14.8009 3.27689 14.5631 3.69944 14.2926C4.1239 14.0209 4.75403 13.7945 5.51465 13.619C6.75956 13.3317 8.21367 13.2112 9.3335 13.1777V13.334C9.3335 13.7022 9.63197 14.0007 10.0002 14.0007C10.3684 14.0007 10.6668 13.7022 10.6668 13.334V9.77868C12.5586 9.46129 14.0002 7.81598 14.0002 5.83398C14.0002 3.62485 12.2093 1.83398 10.0002 1.83398Z"
+                fill="#065F46" />
+            </svg>
+            <p className="text-base font-normal text-gray-400">Shanzu, Mombasa, Kenya</p>
+          </div>
+          <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+              <path
+                d="M7.18848 2.51372C6.28217 1.60741 4.81275 1.60741 3.90644 2.51372C2.03119 4.38896 2.03119 7.42934 3.90644 9.30459L11.3627 16.7609C13.238 18.6361 16.2784 18.6361 18.1536 16.7609C19.0599 15.8546 19.0599 14.3852 18.1536 13.4788L16.0824 11.4077C15.351 10.6763 14.1653 10.6763 13.4339 11.4077C13.2233 11.6183 12.8817 11.6183 12.671 11.4077L8.91853 7.65514C8.70787 7.44448 8.70787 7.10293 8.91853 6.89227C9.64989 6.1609 9.64989 4.97513 8.91853 4.24377L7.18848 2.51372Z"
+                fill="#065F46" />
+            </svg>
+            <p className="text-base font-normal text-gray-400 select-all">+254742843430</p>
+          </div>
+          <div className="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+              <path
+                d="M0.980369 2.24792C1.71093 1.28666 2.86648 0.666016 4.16699 0.666016H12.5003C13.7782 0.666016 14.9162 1.26527 15.6485 2.19809C15.6369 2.2106 15.6257 2.22364 15.615 2.23721L14.8684 3.18004L13.1551 5.20653C12.1329 6.41561 11.7452 6.85169 11.2425 7.08496C10.7399 7.31822 10.1565 7.33272 8.57326 7.33273H8.09451C6.51086 7.33271 5.92743 7.31822 5.42467 7.08486C4.92191 6.8515 4.53424 6.41525 3.51199 5.20572L1.80012 3.18021L1.79155 3.17028L0.980369 2.24792Z"
+                fill="#065F46" />
+              <path
+                d="M0.331033 3.52856C0.224291 3.88909 0.166992 4.27086 0.166992 4.66602V11.3327C0.166992 13.5418 1.95785 15.3327 4.16699 15.3327H12.5003C14.7095 15.3327 16.5003 13.5418 16.5003 11.3327V4.66602C16.5003 4.25643 16.4388 3.86122 16.3244 3.48914L15.9071 4.01614C15.9027 4.02173 15.8981 4.02725 15.8935 4.0327L14.0746 6.18411C13.1883 7.23323 12.6064 7.92194 11.8038 8.29441C11.0011 8.66689 10.0995 8.66657 8.7261 8.6661L7.94163 8.6661C6.56792 8.66657 5.66611 8.66688 4.86332 8.29426C4.06053 7.92164 3.47866 7.23268 2.5923 6.18317L0.786009 4.04589L0.331033 3.52856Z"
+                fill="#065F46" />
+            </svg>
+            <p className="text-base font-normal text-gray-400 select-all">finechina254@protonmai.com</p>
+          </div>
+        </div>
 
     <div className="mt-16 border-t border-gray-100 pt-8">
       <p className="text-center text-xs/relaxed text-gray-500">

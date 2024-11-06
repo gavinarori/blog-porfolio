@@ -31,13 +31,13 @@ export function MainNav({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-10 z-50",
+        "max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4",
         className
       )}
     >
       <Link href={"/"}>
-        <div className="flex items-center justify-between w-32">
-          <p>John Paul</p>
+        <div className="flex items-center justify-between w-32 ">
+          <p className=" dark:text-white text-black ">John Paul</p>
         </div>
       </Link>
       <NavigationMenu>
@@ -51,12 +51,12 @@ export function MainNav({ className }: { className?: string }) {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex items-center gap-4 justify-between w-20">
+      <div className="flex items-center -ml-8 gap-4 justify-between w-20">
         <ModeToggle />
         <Dialog>
       <DialogTrigger asChild>
       <Button variant="outline" >
-          {session ? `${session.user?.email}` : "Admin"}
+          {session ? `log out` : "Admin"}
       </Button>
       </DialogTrigger>
       <DialogContent >  
