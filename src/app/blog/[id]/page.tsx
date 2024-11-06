@@ -36,7 +36,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3000/api/blog/${id}`)
+      fetch(`https://omari-john-paul.vercel.app/api/blog/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setPost(data.blog); 
@@ -58,7 +58,7 @@ export default function Page({ params }: { params: { id: string } }) {
   }
 
   const deleteBlog = async (id: string) => {
-    const res = fetch(`http://localhost:3000/api/blog/${id}`, {
+    const res = fetch(`https://omari-john-paul.vercel.app/api/blog/${id}`, {
       method: "DELETE",
       //@ts-ignore
       "Content-Type": "application/json",

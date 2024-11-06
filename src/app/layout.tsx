@@ -11,10 +11,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: '',
-    template: `%s | ${siteConfig.name}`,
+    default: 'John paul omari',
+    template: ``,
   },
-  description: siteConfig.description,
+  description: "my porfolio website",
 };
 
 export default function RootLayout({
